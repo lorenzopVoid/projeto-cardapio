@@ -14,16 +14,25 @@ cardapio.eventos = {
 
 cardapio.methodos = {
     //obtem a lista de itens do cardapio
-    obterItensCardapio: () => {
+    obterItensCardapio: (categoria = 'burgers') => {
 
-        var filtro = MENU['burgers'];
+        var filtro = MENU[categoria];
         console.log(filtro);
 
+        $("#itensCardapio").html('')
+
         $.each(filtro, (i, e) => {
-            let temp = cardapio.templates.item.replace(/\${img}/g, e.img).replace(/\${name}/g, e.name).replace(/\${preco}/g, e.price)
+            let temp = cardapio.templates.item.replace(/\${img}/g, e.img).replace(/\${name}/g, e.name).replace(/\${preco}/g, e.price.toFixed(2).replace('.', ','))
 
             $("#itensCardapio").append(temp)
         })
+
+        // remover o active do elemento
+        $(".container-menu a").removeClass('active');
+
+        // adiciona o active no elemento atual
+        $("#menu-" + categoria).addClass('active');
+    
 
     },
 }
