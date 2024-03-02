@@ -234,22 +234,46 @@ cardapio.methodos = {
         }
 
     },
-
+    // diminuir quantidade do item no carrinho
     diminuirQuantidadeCarrinho: (id) => {
 
+        let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
 
+        if (qntdAtual > 1) {
+            $("#qntd-carrinho-" + id).text(qntdAtual - 1);
+            cardapio.methodos.atualizarCarrinho(id, qntdAtual - 1);
+        }
+        else {
+            cardapio.methodos.removerItemCarrinho(id);
+        }
 
     },
-
+    // aumenta quantidade do item no carrinho
     aumentarQuantidadeCarrinho: (id) => {
 
-
+        let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
+        $("#qntd-carrinho-" + id).text(qntdAtual + 1);
+        cardapio.methodos.atualizarCarrinho(id, qntdAtual + 1);
 
     },
-
+    // botão remover item do carrinho
     removerItemCarrinho: (id) => {
 
+        MEU_CARRINHO = $.grep(MEU_CARRINHO, (e, i) => {return e.id != id});
+        cardapio.methodos.carregarCarrinho();
 
+        // atualiza o botão carrinho na quantidade atualizada
+        cardapio.methodos.atualizarBadgeTotal();
+
+    },
+    // atualiza o carrinho com a quantidade atual
+    atualizarCarrinho: (id, qntd) => {
+
+        let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
+        MEU_CARRINHO[objIndex].qntd = qntd;
+
+        // atualiza o botão carrinho na quantidade atualizada
+        cardapio.methodos.atualizarBadgeTotal();
 
     },
 
