@@ -461,7 +461,6 @@ cardapio.methodos = {
     
     },
 
-
 }
 
 cardapio.templates = {
@@ -527,8 +526,6 @@ cardapio.templates = {
             x <b>\${qntd}</b>
         </p>
     </div>
-    
-    
     
     `
 
