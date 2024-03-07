@@ -10,12 +10,13 @@ var MEU_ENDERECO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 5;
 
-var CELULAR_EMPRESA = '5584991655075';
+var CELULAR_EMPRESA = '5584999651373';
 
 cardapio.eventos = {
 
     init: () => {
         cardapio.methodos.obterItensCardapio();
+        cardapio.methodos.carregarBotaoReserva();
     }
 
 }
@@ -447,7 +448,7 @@ cardapio.methodos = {
     finalizarPedido: () => {
 
         if (MEU_CARRINHO.length > 0 && MEU_ENDERECO != null) {
-            var texto = ', gostaria de fazer um pedido:\n';
+            var texto = 'Olá, gostaria de fazer um pedido:\n';
 
             texto += `\n*Itens do pedido:*\n\n\${itens}`;
             texto += '\n*Endereço de entrega:*';
@@ -465,12 +466,23 @@ cardapio.methodos = {
 
                     // converte a url
                     let encode = encodeURI(texto);
-                    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=Ola${encode}`;
+                    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
                     
                     $("#btnEtapaResumo").attr('href', URL);
                 }
             })
         }
+
+    },
+    // carrega  link do botao reserva
+    carregarBotaoReserva: () => {
+
+        var texto = 'Olá! Gostaria de fazer uma *reserva*';
+
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+        $("#btnReserva").attr('href', URL);
 
     },
 
