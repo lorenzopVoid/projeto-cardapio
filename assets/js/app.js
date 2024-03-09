@@ -16,6 +16,8 @@ cardapio.eventos = {
 
     init: () => {
         cardapio.methodos.obterItensCardapio();
+        cardapio.methodos.carregarBotaoLigar();
+        cardapio.methodos.carregarBotaoWhatsapp();
         cardapio.methodos.carregarBotaoReserva();
     }
 
@@ -485,7 +487,38 @@ cardapio.methodos = {
         $("#btnReserva").attr('href', URL);
 
     },
+    // carrega o botao de ligar
+    carregarBotaoLigar: () => {
 
+        $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
+
+    },
+    // abre o depoimento
+    abrirDepoimento: (depoimento) => {
+
+        $("#depoimento-1").addClass('hidden');
+        $("#depoimento-2").addClass('hidden');
+        $("#depoimento-3").addClass('hidden');
+
+        $("#btnDepoimento-1").removeClass('active');
+        $("#btnDepoimento-2").removeClass('active');
+        $("#btnDepoimento-3").removeClass('active');
+
+        $("#depoimento-" + depoimento).removeClass('hidden');
+        $("#btnDepoimento-" + depoimento).addClass('active');
+
+    },
+    //carrega o botao do whatsapp
+    carregarBotaoWhatsapp: () => {
+
+        var texto = 'Olá! Gostaria de realizar *meu pedido*';
+
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+        $("#btnWpp").attr('href', URL);
+
+    },
 
     // mensagens
     mensagem: (texto, cor = 'red', tempo = 3500) => {

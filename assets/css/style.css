@@ -375,17 +375,17 @@ a.navbar-brand {
 }
 
 #depoimento-1 .imagem-depoimento {
-    background-image: url(../images/diego.jpg);
+    background-image: url(../img/diego.jpg);
     background-size: cover;
 }
 
 #depoimento-2 .imagem-depoimento {
-    background-image: url(../images/ana.jpg);
+    background-image: url(../img/ana.jpg);
     background-size: cover;
 }
 
 #depoimento-3 .imagem-depoimento {
-    background-image: url(../images/joao.jpg);
+    background-image: url(../img/joao.jpg);
     background-size: cover;
 }
 
