@@ -1,0 +1,22 @@
+/* Desktop (col-lg) 992px+ */
+@media (min-width: 992px) {
+
+}
+
+/* Desktop e Tablets (col-md) 768 a 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Tablets (col-sm) 576 a 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/* Tablets e celulares (col) 0 a 767px */
+@media (max-width: 767px) {
+
+    
+
+
+}
