@@ -183,7 +183,7 @@ a.navbar-brand {
     bottom: 10px;
 }
 
-.serviços {
+.servicos {
     padding-top: 100px;
     padding-bottom: 150px;
 }
@@ -223,12 +223,12 @@ a.navbar-brand {
     margin-bottom: 10px;
 }
 
-.background-serviços {
+.background-servicos {
     position: absolute;
     left: 0;
     right: 0;
     height: 500px;
-    background-image: url(../images/bg-icons-2.png);
+    background-image: url(../img/bg-icons-2.png);
 }
 
 .cardapio {
@@ -241,7 +241,7 @@ a.navbar-brand {
     left: 0;
     right: 0;
     height: 500px;
-    background-image: url(../images/bg-icons-1.png);
+    background-image: url(../img/bg-icons-1.png);
 }
 
 .container-menu {
@@ -361,7 +361,7 @@ a.navbar-brand {
     left: 0;
     right: 0;
     height: 500px;
-    background-image: url(../images/bg-icons-1.png);
+    background-image: url(../img/bg-icons-1.png);
 }
 
 .imagem-depoimento {
